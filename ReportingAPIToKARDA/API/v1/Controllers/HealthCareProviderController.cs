@@ -20,20 +20,25 @@ namespace VaccinesDistributionReportAPI.API.v1.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<HealthCareProvider>> GetAllHealthCareProvider()
+        public async Task<ActionResult<IEnumerable<HealthCareProvider>>> GetAllHealthCareProvider()
         {
-            return  await _IHealthCareProviderRepository.GetAllHealthCareProvider();
+            return Ok( await _IHealthCareProviderRepository.GetAllHealthCareProvider());
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<HealthCareProvider>> GetHealthCareProviderById(int id)
         {
-            return await _IHealthCareProviderRepository.GetHealthCareProviderById(id);
+            return Ok( await _IHealthCareProviderRepository.GetHealthCareProviderById(id));
         }
 
         [HttpPost]
         public async Task<ActionResult<HealthCareProvider>> AddHealthCareProvider([FromBody] HealthCareProvider report)
         {
+            if (!ModelState.IsValid)
+            {
+                Console.WriteLine("Invalid state...");
+                return BadRequest(ModelState);
+            }
             var newReport = await _IHealthCareProviderRepository.AddHealthCareProvider(report);
             return CreatedAtAction(nameof(GetAllHealthCareProvider), new { id = newReport.Id }, newReport);
         }

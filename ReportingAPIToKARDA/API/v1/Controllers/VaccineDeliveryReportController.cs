@@ -20,15 +20,15 @@ namespace VaccinesDistributionReportAPI.API.v1.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<VaccineDeliveryReport>> GetAllDeliveryReport()
+        public async Task<ActionResult<IEnumerable<VaccineDeliveryReport>>> GetAllDeliveryReport()
         {
-            return await _IInleveransRepository.GetAllDeliveryReport();
+            return Ok(await _IInleveransRepository.GetAllDeliveryReport());
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<VaccineDeliveryReport>> GetDeliveryReportById(int id)
         {
-            return await _IInleveransRepository.GetDeliveryReportById(id);
+            return Ok(await _IInleveransRepository.GetDeliveryReportById(id));
         }
 
         [HttpPost]
@@ -36,6 +36,7 @@ namespace VaccinesDistributionReportAPI.API.v1.Controllers
         {
             if (!ModelState.IsValid)
             {
+                Console.WriteLine("Invalid state...");
                 return BadRequest(ModelState);
             }
             var newReport = await _IInleveransRepository.AddDeliveryReport(report);
