@@ -8,10 +8,7 @@ namespace VaccinesDistributionReportAPI.API.v1.Models
 {
     public class VaccineDeliveryReport
     {
-        //public VaccineDeliveryReport()
-        //{
-
-        //}
+       
         [Required(ErrorMessage = "Id is required.")]
         public int Id { get; set; }
         public DateTime DeliveryDate { get; set; }

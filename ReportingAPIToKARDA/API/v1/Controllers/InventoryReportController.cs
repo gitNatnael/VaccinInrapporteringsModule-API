@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using VaccinesDistributionReportAPI.API.v1.Models;
-using VaccinesDistributionReportAPI.API.v1.Repositories.Inventory;
+using VaccinesDistributionReportAPI.API.v1.Repositories;
 
 namespace VaccinesDistributionReportAPI.API.v1.Controllers
 {

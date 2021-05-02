@@ -9,7 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using VaccinesDistributionReportAPI.API.v1.Repositories;
-using VaccinesDistributionReportAPI.API.v1.Repositories.Inventory;
+
 using VaccinesDistributionReportAPI.Data;
 
 
@@ -27,6 +27,7 @@ namespace VaccinesDistributionReportAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IInventoryRepository, InventoryRepository>();
             services.AddScoped<IHealthCareProviderRepository, HealthCareProviderRepository>();
             services.AddScoped<IVaccineSupplierRepository, VaccineSupplierRepository>();

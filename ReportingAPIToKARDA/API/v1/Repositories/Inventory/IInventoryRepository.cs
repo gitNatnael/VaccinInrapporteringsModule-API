@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using VaccinesDistributionReportAPI.API.v1.Models;
 
-namespace VaccinesDistributionReportAPI.API.v1.Repositories.Inventory
+namespace VaccinesDistributionReportAPI.API.v1.Repositories
 {
    public interface IInventoryRepository
     {

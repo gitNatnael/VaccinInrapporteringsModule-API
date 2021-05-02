@@ -19,6 +19,7 @@ namespace VaccinesDistributionReportAPI.Data
         public DbSet<VaccineSupplier> Vaccinesuppliers { get; set; }
         public DbSet<HealthCareProvider> HealthCareProviders { get; set; }
         public DbSet<InventoryReport> InventoryReport { get; set; }
+        public DbSet<OrderReport> OrderReport { get; set; }
       
     }
 }

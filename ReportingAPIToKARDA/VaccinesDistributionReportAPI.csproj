@@ -14,7 +14,6 @@
   <ItemGroup>
     <Folder Include="API\v1\Repositories\Consumption\" />
     <Folder Include="API\v1\Repositories\Capactiy\" />
-    <Folder Include="API\v1\Repositories\Order\" />
     <Folder Include="Services\" />
   </ItemGroup>
 

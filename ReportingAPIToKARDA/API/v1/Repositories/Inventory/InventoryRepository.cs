@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using VaccinesDistributionReportAPI.API.v1.Models;
 using VaccinesDistributionReportAPI.Data;
 
-namespace VaccinesDistributionReportAPI.API.v1.Repositories.Inventory
+namespace VaccinesDistributionReportAPI.API.v1.Repositories
 {
     public class InventoryRepository : IInventoryRepository
     {
